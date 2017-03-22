@@ -6,11 +6,11 @@
 
   java = require('java');
 
-  java.classpath.push(__dirname + "/../jar/nekohtml-1.9.13.jar");
+  java.classpath.push(__dirname + "/jar/nekohtml-1.9.13.jar");
 
-  java.classpath.push(__dirname + "/../jar/xerces-2.9.1.jar");
+  java.classpath.push(__dirname + "/jar/xerces-2.9.1.jar");
 
-  java.classpath.push(__dirname + "/../jar/boilerpipe-core-1.2.0-xissy.jar");
+  java.classpath.push(__dirname + "/jar/boilerpipe-core-1.2.0-xissy.jar");
 
   HTMLFetcher = java["import"]('de.l3s.boilerpipe.sax.HTMLFetcher');
 
