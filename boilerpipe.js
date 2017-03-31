@@ -10,7 +10,8 @@
 
   java.classpath.push(__dirname + "/jar/xerces-2.9.1.jar");
 
-  java.classpath.push(__dirname + "/jar/boilerpipe-core-1.2.0-xissy.jar");
+  //java.classpath.push(__dirname + "/jar/boilerpipe-core-1.2.0-xissy.jar");
+  java.classpath.push(__dirname + "/jar/boilerpipe-common-2.0-SNAPSHOT.jar");
 
   HTMLFetcher = java["import"]('de.l3s.boilerpipe.sax.HTMLFetcher');
 

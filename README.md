@@ -12,7 +12,11 @@ WARNING: Don't forget to set JAVA variable referred to [node-java](https://githu
 Via [npm](https://npmjs.org):
 
     $ npm install boilerpipe
-  
+
+### Source code project
+
+    $ mvn compile
+    $ mvn package
 
 ## Usage
 
