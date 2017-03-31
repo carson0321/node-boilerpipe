@@ -13,33 +13,33 @@
   //java.classpath.push(__dirname + "/jar/boilerpipe-core-1.2.0-xissy.jar");
   java.classpath.push(__dirname + "/jar/boilerpipe-common-2.0-SNAPSHOT.jar");
 
-  HTMLFetcher = java["import"]('de.l3s.boilerpipe.sax.HTMLFetcher');
+  HTMLFetcher = java["import"]('com.kohlschutter.boilerpipe.sax.HTMLFetcher');
 
   InputSource = java["import"]('org.xml.sax.InputSource');
 
   StringReader = java["import"]('java.io.StringReader');
 
-  BoilerpipeSAXInput = java["import"]('de.l3s.boilerpipe.sax.BoilerpipeSAXInput');
+  BoilerpipeSAXInput = java["import"]('com.kohlschutter.boilerpipe.sax.BoilerpipeSAXInput');
 
-  ArticleExtractor = java["import"]('de.l3s.boilerpipe.extractors.ArticleExtractor');
+  ArticleExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.ArticleExtractor');
 
-  ArticleSentencesExtractor = java["import"]('de.l3s.boilerpipe.extractors.ArticleSentencesExtractor');
+  ArticleSentencesExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.ArticleSentencesExtractor');
 
-  CanolaExtractor = java["import"]('de.l3s.boilerpipe.extractors.CanolaExtractor');
+  CanolaExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.CanolaExtractor');
 
-  DefaultExtractor = java["import"]('de.l3s.boilerpipe.extractors.DefaultExtractor');
+  DefaultExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.DefaultExtractor');
 
-  KeepEverythingExtractor = java["import"]('de.l3s.boilerpipe.extractors.KeepEverythingExtractor');
+  KeepEverythingExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.KeepEverythingExtractor');
 
-  KeepEverythingWithMinKWordsExtractor = java["import"]('de.l3s.boilerpipe.extractors.KeepEverythingWithMinKWordsExtractor');
+  KeepEverythingWithMinKWordsExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.KeepEverythingWithMinKWordsExtractor');
 
-  LargestContentExtractor = java["import"]('de.l3s.boilerpipe.extractors.LargestContentExtractor');
+  LargestContentExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.LargestContentExtractor');
 
-  NumWordsRulesExtractor = java["import"]('de.l3s.boilerpipe.extractors.NumWordsRulesExtractor');
+  NumWordsRulesExtractor = java["import"]('com.kohlschutter.boilerpipe.extractors.NumWordsRulesExtractor');
 
-  HTMLHighlighter = java["import"]('de.l3s.boilerpipe.sax.HTMLHighlighter');
+  HTMLHighlighter = java["import"]('com.kohlschutter.boilerpipe.sax.HTMLHighlighter');
 
-  ImageExtractor = java["import"]('de.l3s.boilerpipe.sax.ImageExtractor');
+  ImageExtractor = java["import"]('com.kohlschutter.boilerpipe.sax.ImageExtractor');
 
   Boilerpipe = (function() {
     Boilerpipe.Extractor = {
@@ -102,7 +102,7 @@
           return function(inputSource, callback) {
             return async.waterfall([
               function(callback) {
-                return java.newInstance('de.l3s.boilerpipe.sax.BoilerpipeSAXInput', inputSource, callback);
+                return java.newInstance('com.kohlschutter.boilerpipe.sax.BoilerpipeSAXInput', inputSource, callback);
               }, function(saxInput, callback) {
                 return saxInput.getTextDocument(callback);
               }
