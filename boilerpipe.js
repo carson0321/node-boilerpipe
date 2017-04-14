@@ -6,12 +6,12 @@
 
   java = require('java');
 
-  java.classpath.push(__dirname + "/jar/nekohtml-1.9.13.jar");
+  java.classpath.push(__dirname + "/boilerpipe-jar/nekohtml-1.9.13.jar");
 
-  java.classpath.push(__dirname + "/jar/xerces-2.9.1.jar");
+  java.classpath.push(__dirname + "/boilerpipe-jar/xerces-2.9.1.jar");
 
-  //java.classpath.push(__dirname + "/jar/boilerpipe-core-1.2.0-xissy.jar");
-  java.classpath.push(__dirname + "/jar/boilerpipe-common-2.0-SNAPSHOT.jar");
+  //java.classpath.push(__dirname + "/boilerpipe-jar/boilerpipe-core-1.2.0-xissy.jar");
+  java.classpath.push(__dirname + "/boilerpipe-jar/boilerpipe-common-2.0-SNAPSHOT.jar");
 
   HTMLFetcher = java["import"]('com.kohlschutter.boilerpipe.sax.HTMLFetcher');
 
@@ -153,6 +153,17 @@
             return callback(err);
           }
           return _this.textDocument.getContent(callback);
+        };
+      })(this));
+    };
+
+    Boilerpipe.prototype.getTitle = function(callback) {
+      return this.checkIsProcessed((function(_this) {
+        return function(err) {
+          if (err != null) {
+            return callback(err);
+          }
+          return _this.textDocument.getTitle(callback);
         };
       })(this));
     };
